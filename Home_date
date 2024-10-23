@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover beauty tips, skincare routines, and self-care practices. Natural beauty, skin care, and healthy lifestyle guides">
+    <title>Beauty Space - Your Guide to Natural Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #fdfbf9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+            padding: 2.5rem 0;
+            text-align: center;
+            color: #424242;
+        }
+
+        nav {
+            background: #fff;
+            padding: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #424242;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f48fb1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            min-height: 80vh;
+            background: url('/api/placeholder/1600/900') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            background: white;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #f48fb1;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .trends {
+            padding: 4rem 2rem;
+            background: #fce4ec;
+        }
+
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .trend-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .trend-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .trend-content {
+            padding: 1.5rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #f8bbd0, #fce4ec);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: #424242;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #f48fb1;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            background: #424242;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fce4ec;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .features {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Beauty Space</h1>
+        <p>Your Journey to Natural Beauty & Self-Care</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skincare">Skincare</a></li>
+            <li><a href="#haircare">Hair Care</a></li>
+            <li><a href="#makeup">Makeup</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover Your Natural Beauty</h2>
+            <p>Expert tips, natural remedies, and proven techniques for your beauty journey</p>
+            <a href="#explore" class="btn">Start Your Journey</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Skincare Essentials</h3>
+            <p>Discover the perfect skincare routine for your unique skin type. From morning routines to evening rituals, we've got you covered.</p>
+            <a href="#skincare" class="btn">Learn More</a>
+        </div>
+        <div class="feature-card">
+            <h3>Hair Care Tips</h3>
+            <p>Transform your hair care routine with our expert advice on treatments, styling techniques, and natural remedies.</p>
+            <a href="#haircare" class="btn">Explore</a>
+        </div>
+        <div class="feature-card">
+            <h3>Makeup Guides</h3>
+            <p>Master the art of makeup with our step-by-step tutorials, product reviews, and professional techniques.</p>
+            <a href="#makeup" class="btn">Discover</a>
+        </div>
+    </section>
+
+    <section class="trends">
+        <div class="container">
+            <h2>Latest Beauty Trends</h2>
+            <div class="trends-grid">
+                <div class="trend-card">
+                    <img src="/api/placeholder/400/300" alt="Natural Skincare">
+                    <div class="trend-content">
+                        <h3>Clean Beauty</h3>
+                        <p>Discover the power of natural ingredients</p>
+                    </div>
+                </div>
+                <div class="trend-card">
+                    <img src="/api/placeholder/400/300" alt="Sustainable Beauty">
+                    <div class="trend-content">
+                        <h3>Sustainable Beauty</h3>
+                        <p>Eco-friendly beauty solutions</p>
+                    </div>
+                </div>
+                <div class="trend-card">
+                    <img src="/api/placeholder/400/300" alt="Self-Care Rituals">
+                    <div class="trend-content">
+                        <h3>Self-Care Rituals</h3>
+                        <p>Mindful beauty practices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Join Our Beauty Community</h2>
+        <p>Get exclusive access to beauty tips, tutorials, and special offers</p>
+        <a href="#subscribe" class="btn">Subscribe Now</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beauty Space. All rights reserved.</p>
+            <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>
